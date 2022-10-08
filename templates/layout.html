@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head class="bg-dark">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+
+        <!-- https://favicon.io/emoji-favicons/money-bag/ -->
+        <link href="/static/favicon.ico" rel="icon">
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <title>MG Weather Report {{city}}</title>
+
+    </head>
+
+    <body class="{{background}}">
+
+        <nav class="navbar navbar-dark position-absolute top-0 start-50 translate-middle-x">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><span class="white-color fw-bold big">MG Weather</span></a>
+            </div>
+        </nav>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary mb-0 text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="container-fluid py-5 text-center">
+            {% block main %}
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <h2>{{city}}, {{country}}</h2>
+                <h1><img src={{image}} alt=""> {{temp}}°C</h1>
+                <h3>{{description}}</h3>
+                <h3>Current Local Time: {{current_time}}</h3>
+                <br>
+                <br>
+                <h5>Feels Like:  {{feels_like}} °C</h5>
+                <h5>Wind Speed: {{wind_speed}} km/h</h5>
+                <h5>Humidity:   {{humidity}}%</h5>
+                <br>
+                <h5>Sun Rise:   {{sun_rise_time}}</h5>
+                <h5>Sun Set:    {{sun_set_time}}</h5>
+            </div>
+            {% endblock %}
+        </main>
+    </body>
+    <footer class="mb-5 small text-center text-muted position-absolute bottom-0 start-50 translate-middle-x">
+            Data provided by <a class="iex" target="_blank" href="https://openweathermap.org/">OpenWeather</a>
+    </footer>
+
+</html>
+

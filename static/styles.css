@@ -1,0 +1,47 @@
+body {
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.white-color {
+    color: #ffffff;
+}
+
+.white-color:hover {
+    text-decoration: underline;
+}
+
+.day {
+    /* background-color: #36a2b3; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('day_sky.jpg');
+}
+
+
+.night {
+    /* background-color: #212121; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('night_sky.jpg');
+}
+
+.button-color {
+    background-color: #8603ff;
+}
+
+.button-color:hover {
+    background-color: #6402bf;
+}
+
+.big {
+    font-size: 40px;
+    /* text-shadow: 5px 5px #000; */
+}
+
+.input-width {
+    width: 240px;
+}
+
+.error {
+    color: #d43f5b;
+    text-shadow: 2px 2px #000;
+}
